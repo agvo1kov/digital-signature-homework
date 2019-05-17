@@ -5,7 +5,7 @@ fs.readFile('data.txt', function(err, buf) {
     const hash = crypto.createHash('sha512');
     const data = hash.update(content, 'utf-8');
     const gen_hash = data.digest('hex');
-    fs.writeFile('result.txt', JSON.stringify({
+    fs.writeFile('result.json', JSON.stringify({
         'file': content,
         'hash': gen_hash
     }), (err) => {});
